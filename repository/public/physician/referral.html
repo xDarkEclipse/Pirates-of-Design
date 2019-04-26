@@ -1,0 +1,59 @@
+
+<div id="header"></div>
+<div id="header_content"></div>
+<link rel="stylesheet" href="../assets/css/main-physician.css">
+<script src="../assets/third-party/jquery-3.3.1.js"></script>
+
+<script>
+  $(function(){
+    $('#header').load('../template/header.html');
+    $('#header_content').load('../template/header_content_physician.html');
+    $('#footer_content').load('../template/footer_content.html');
+    $('#footer').load('../template/footer.html');
+
+    var script = document.createElement('script');
+    script.src = 'assets/js/index-physician.js';
+    script.setAttribute('src','../assets/js/index-physician.js');
+    document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+  })
+</script>
+
+
+<div class="container referral">
+  <h1 class="font-mo text-bold text-up">Referral</h1>
+  <hr class="custom-hr" align="left" />
+
+  <p class="title-info font-80 line-25">
+    Physicians could see referrals that are in waiting list or referrals that are already approved/rejected
+    <br/>The referral detail could be seen by clicking the referral card below
+  </p>
+
+  <div class="row">
+
+    <!-- Waiting for approval  -->
+    <div class="col-md-4 waiting-approval">
+      <h4 class="font-mo text-bold">Waiting for approval</h4>
+      <!-- Waiting approval referrals -->
+    </div>
+
+    <!-- Latest Agreed Appointment  -->
+    <div class="col-md-4 latest-appointment">
+      <h4 class="font-mo text-bold">Latest Agreed</h4>
+      <!-- Latest appointment referrals -->
+    </div>
+
+    <!-- See all appointment history -->
+    <div class="col-md-4 all-appointment custom-box">
+      <div class="p-3 text-bold font-90">
+        SEE <br/>
+        ALL <br/>
+        APPOINTMENT <br/>
+        HISTORY
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer_content"></div>
+<div id="footer"></div>

@@ -1,0 +1,243 @@
+
+
+<div id="header"></div>
+<div id="header_content"></div>
+<link rel="stylesheet" href="../assets/css/main-gp.css">
+
+<script src="../assets/third-party/jquery-3.3.1.js"></script>
+
+<script src="/assets/third-party/bootstrap.min.js"></script>
+<script src='/assets/third-party/full-jquery.min.js'></script>
+<script src='/assets/third-party/full-jquery-ui.min.js'></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<script>
+  $(function(){
+    $('#header').load('../template/header.html');
+    $('#header_content').load('../template/header_content_gp.html');
+    $('#footer_content').load('../template/footer_content.html');
+    $('#footer').load('../template/footer.html');
+  })
+</script>
+
+
+<div class="container referral">
+  <h1 class="font-mo text-bold text-up">Referral</h1>
+  <hr class="custom-hr" align="left" />
+
+  <p class="title-info font-80 line-25">
+    GP is able to create a referral to a physician based on the patient’s need and information
+    <br/>Easy Referral will recommend the nearest doctor available
+  </p>
+
+  <h4 class="font-mo text-bold mt-5">Create Referral</h4>
+
+  <div class="custom-box p-5 ref-box" id="step1">
+    <h5 class="font-mo text-bold">1. Book a schedule</h5>
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row form-group">
+              <label for="p-in" class="col-md-4 label-heading">Event Name</label>
+              <div class="col-md-8 ui-front">
+                  <input type="text" class="form-control" name="name" value="" id="name">
+              </div>
+            </div>
+            <div class="row form-group">
+              <label for="p-in" class="col-md-4 label-heading">Description</label>
+              <div class="col-md-8 ui-front">
+                  <input type="text" class="form-control" name="description" id="description">
+              </div>
+            </div>
+            <div class="row form-group">
+              <label for="p-in" class="col-md-4 label-heading" >Start Date</label>
+
+              <div class="col-md-8 input-group date" id="datetimepicker1" data-target="#datetimepicker1" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input" name="start_date" id="start_date">
+                  <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+              </div>
+
+            </div>
+            <div class="row form-group">
+              <label for="p-in" class="col-md-4 label-heading">End Date</label>
+
+              <div class="col-md-8 input-group date" id="datetimepicker2" data-target="#datetimepicker2" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input" name="end_date" id="end_date">
+                  <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" id="addEventBtn" value="Add Event">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id='calendar' class="mt-3"></div>
+
+    <div class="next next-1 mt-3">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <div class="custom-box p-5 ref-box" id="step2">
+    <h5 class="font-mo text-bold">2. Choose a Physician</h5>
+
+    <div class="row p-3">
+      <div class="col-md-4 custom-box " id="googleMap" style="width:100%;height:400px;">
+
+        Nearest Hospital
+
+        <script>
+        function myMap() {
+        var mapProp= {
+            center:new google.maps.LatLng(51.508742,-0.120850),
+            zoom:5,
+        };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVUk29LA58EyC3PJ8RiPg4iuayv8f0fs0&callback=myMap">
+        </script>
+      </div>
+
+      <div class="col-md-4 physician-list">
+        <!-- list goes here -->
+      </div>
+
+      <div class="col-md-4 physician-detail">
+        <h5>Please pick the physician</h5>
+        <!-- Detail goes here -->
+      </div>
+    </div>
+
+    <div class="before before-2 mt-3">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+
+    <div class="next next-2 mt-3">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <div class="custom-box p-5 ref-box" id="step3">
+    <h5 class="font-mo text-bold">3. Create Patient Referral</h5>
+
+    <div class="row">
+      <div class="col-md-5 patient-info">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Existing Patient ID</label>
+          <input type="email" class="form-control custom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter patient ID">
+        </div>
+        <div class="font-80 mt-4">
+          OR Register a new patient
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patient Name</label>
+              <input type="email" class="form-control custom-input" id="inputpname" aria-describedby="emailHelp" placeholder="Enter Patient Name">
+            </div>
+
+          </div>
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patient Address</label>
+              <input type="email" class="form-control custom-input" id="inputpaddress" aria-describedby="emailHelp" placeholder="Enter Patient Address">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patient Date of Birth (YYYY-MM-DD)</label>
+              <input type="email" class="form-control custom-input" id="inputpdob" aria-describedby="emailHelp" placeholder="YYYY-MM-DD">
+            </div>
+
+          </div>
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patient Phone Number</label>
+              <input type="email" class="form-control custom-input" id="inputpphonum" aria-describedby="emailHelp" placeholder="+61 000 000 000">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-7 ref-info">
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Referral Title</label>
+          <input type="email" class="form-control custom-input" id="inputrtitle" aria-describedby="emailHelp" placeholder="Enter Referral Title">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Referral Description</label>
+          <textarea class="form-control custom-input" id="inputrdesc" aria-describedby="emailHelp" placeholder="Referral Descriptions"></textarea>
+        </div>
+
+        Category
+        <div class="custom-control custom-radio">
+          <input type="radio" id="urgent" name="inputrcategory" class="custom-control-input" value="urgent">
+          <label class="custom-control-label" for="urgent">Urgent</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="semi-urgent" name="inputrcategory" class="custom-control-input" value="semi-urgent">
+          <label class="custom-control-label" for="semi-urgent">Semi Urgent</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="non-urgent" name="inputrcategory" class="custom-control-input" value="non-urgent">
+          <label class="custom-control-label" for="non-urgent">Non - Urgent</label>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="before before-3 mt-3">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+
+    <div class="next next-3 mt-3">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  $(function(){
+    var script = document.createElement('script');
+    script.src = 'assets/js/index-gp.js';
+    script.setAttribute('src','../assets/js/index-gp.js');
+    document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+  })
+</script>
+
+<div id="footer_content"></div>
+<div id="footer"></div>

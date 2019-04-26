@@ -1,0 +1,65 @@
+
+/* Schedules */
+.schedules #calendar {
+  margin-top: 5%;
+}
+
+/* Referral Physician */
+
+.custom-box .ref_description {
+  max-height: 20px;
+  overflow: hidden;
+}
+
+.custom-box p {
+  margin-bottom: 0px !important
+}
+
+.referral .all-appointment {
+  border-radius: 20px;
+  background: url('http://www.sinai.org/sites/default/files/wide%20Doctor%20and%20Nurse%20Writing%20copy_0.jpg') 0% 0%/cover ;
+  min-height: 80px;
+}
+
+.referral .all-appointment .p-3 { line-height: 20px;}
+
+/* Profile */
+.profile .pic {border-radius: 50%; max-width: 90%;}
+.profile .data p {margin-bottom: 0px}
+.profile .row {margin-top: 5%;}
+
+/* Ref Detail */
+.ref-detail .pic {
+  border-radius: 50%;
+  max-width: 90%;
+  margin-bottom: 3%;
+}
+
+.ref-detail p{margin-bottom: 0px;}
+
+.ref-detail .row {margin-top: 5%;}
+
+/* Ref wait */
+.ref-wait .pic {
+  border-radius: 50%;
+  max-width: 90%;
+  margin-bottom: 3%;
+}
+
+.ref-wait p{margin-bottom: 0px;}
+
+.ref-wait .row {margin-top: 5%;}
+
+/* All History */
+.all-history .referral-box {overflow-y: scroll;}
+.all-history .referral-list:hover{cursor: pointer;}
+.all-history .referral-list .hidden {display: none;}
+.all-history .referral-list {width: 100%; margin: 3% 0; font-size: 80%;}
+.all-history .referral-list h3 { font-size: 20px; }
+.all-history .referral-list p {font-size: 100%; display: inline;}
+.all-history .referral-list .address {font-size: 90%; margin-bottom: 0px !important;}
+.all-history .referral-list hr {margin: 3px 0px;}
+#referrals .list { margin-top: 5%; }
+#referrals .search { padding-left: 3%; background: white; width: 80%; border-radius: 10px; border: 1px solid #5288f3;}
+#referrals .search:focus {box-shadow: 0 0 0 0 rgba(0,123,255,.25) !important; outline: 0px !important}
+#referrals .sort { background: #5288f3; color: white; font-weight: 700; padding-top: 2px; padding-bottom: 2px;}

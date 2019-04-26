@@ -1,0 +1,56 @@
+
+
+<div id="header"></div>
+<div id="header_content"></div>
+<link rel="stylesheet" href="../assets/css/main-physician.css">
+
+<!-- Jbox -->
+<script src="../assets/third-party/jBox.min.js"></script>
+<link href="../assets/third-party/jBox.css" rel="stylesheet">
+<link href="/assets/third-party/notice/jbox.notice.css">
+
+<script src="../assets/third-party/jquery-3.3.1.js"></script>
+
+<script>
+  $(function(){
+    $('#header').load('../template/header.html');
+    $('#header_content').load('../template/header_content_physician.html');
+    $('#footer_content').load('../template/footer_content.html');
+    $('#footer').load('../template/footer.html');
+
+    var script = document.createElement('script');
+    script.src = 'assets/js/index-physician.js';
+    script.setAttribute('src','../assets/js/index-physician.js');
+    document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+  })
+</script>
+
+
+<div class="container all-history">
+  <h1 class="font-mo text-bold text-up">All Appointment History</h1>
+  <hr class="custom-hr" align="left" />
+
+  <p class="title-info font-80 line-25">
+    Below are the lists of all the appointment history that relate to the physician
+  </p>
+
+  <div class="custom-box referral-box fill-80-viewport py-3 px-5">
+
+    <p class="text-bold mt-5">Referral List</p>
+    <hr class="custom-hr align-left" align="left" />
+
+    <div id="referrals">
+      <input class="search form-input" placeholder="Search" />
+      <button class="btn sort" data-sort="name">
+        Sort by name
+      </button>
+      <div class="list">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="footer_content"></div>
+<div id="footer"></div>

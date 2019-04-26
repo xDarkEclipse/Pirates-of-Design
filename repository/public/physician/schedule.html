@@ -1,0 +1,98 @@
+
+
+<div id="header"></div>
+<div id="header_content"></div>
+<script src="../assets/third-party/jquery-3.3.1.js"></script>
+
+<link rel="stylesheet" href="../assets/css/main-physician.css">
+
+<script src="/assets/third-party/bootstrap.min.js"></script>
+<script src='/assets/third-party/full-jquery.min.js'></script>
+<script src='/assets/third-party/full-jquery-ui.min.js'></script>
+<script>
+  $(function(){
+    $('#header').load('../template/header.html');
+    $('#header_content').load('../template/header_content_physician.html');
+    $('#footer_content').load('../template/footer_content.html');
+    $('#footer').load('../template/footer.html');
+
+  })
+</script>
+
+
+<div class="container schedules">
+  <h1 class="font-mo text-bold text-up">Schedule</h1>
+  <hr class="custom-hr" align="left" />
+
+  <p class="title-info font-80 line-25">
+    Physician could generate and integrate their schedule with our system.
+    <br/>All booked appointment will be registered and automatically generated in the following schedule table.
+  </p>
+
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row form-group">
+            <label for="p-in" class="col-md-4 label-heading">Event Name</label>
+            <div class="col-md-8 ui-front">
+                <input type="text" class="form-control" name="name" value="" id="name">
+            </div>
+          </div>
+          <div class="row form-group">
+            <label for="p-in" class="col-md-4 label-heading">Description</label>
+            <div class="col-md-8 ui-front">
+                <input type="text" class="form-control" name="description" id="description">
+            </div>
+          </div>
+          <div class="row form-group">
+            <label for="p-in" class="col-md-4 label-heading" >Start Date</label>
+
+            <div class="col-md-8 input-group date" id="datetimepicker1" data-target="#datetimepicker1" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" name="start_date" id="start_date">
+                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+
+          </div>
+          <div class="row form-group">
+            <label for="p-in" class="col-md-4 label-heading">End Date</label>
+
+            <div class="col-md-8 input-group date" id="datetimepicker2" data-target="#datetimepicker2" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" name="end_date" id="end_date">
+                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" id="addEventBtn" value="Add Event">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id='calendar'></div>
+</div>
+
+<script>
+  $(function(){
+    var script = document.createElement('script');
+    script.src = 'assets/js/index-physician.js';
+    script.setAttribute('src','../assets/js/index-physician.js');
+    document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+  })
+</script>
+
+<div id="footer_content"></div>
+<div id="footer"></div>

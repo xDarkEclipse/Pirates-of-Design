@@ -1,0 +1,68 @@
+
+<div id="header"></div>
+<div id="header_content"></div>
+<script src="/assets/third-party/jquery-3.3.1.js"></script>
+
+<script>
+  $(function(){
+    $('#header').load('template/header.html');
+    $('#header_content').load('template/header_content.html');
+    $('#footer_content').load('template/footer_content.html');
+    $('#footer').load('template/footer.html');
+
+    var script = document.createElement('script');
+    script.src = 'assets/js/index.js';
+    script.setAttribute('src','assets/js/index.js');
+    document.getElementsByTagName("script")[0].parentNode.appendChild(script);
+  })
+</script>
+
+
+<div class="container login">
+  <h1 class="font-mo text-bold text-up">Log in</h1>
+  <hr class="custom-hr" align="left" />
+
+  <p class="title-info font-80 line-25">
+    Sign in to your account with Easy Referral in order to use all our referral features including making an appointment with the nearest specialist.
+    <br/>Our application is limited into two parties which is the General Practitioner (GP) or the Physician.
+  </p>
+
+  <div class="content">
+    <h4 class="font-mo text-bold">Go to your account</h4>
+    <div class="login-box custom-box fill-60-viewport">
+
+      <div class="row">
+        <div class="col-md-4">
+          <div>
+            <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input type="email" class="form-control custom-input" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" class="form-control custom-input" id="inputPassword" placeholder="Password">
+            </div>
+            <div class="font-80 mt-4">
+              Don't have an account yet?
+            </div>
+            <button class="btn custom-button align-left font-80">Let's Register</button>
+            <br/>
+            <button type="submit" class="btn custom-button login-button align-right text-up space-1">Log In</button>
+          </div>
+        </div>
+
+        <div class="col-md-8 ref-img">
+          <div class="ref-img-inside"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- <script src="/assets/js/index.js"></script> -->
+
+<div id="footer_content"></div>
+<div id="footer"></div>
